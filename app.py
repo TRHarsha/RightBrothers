@@ -3,6 +3,8 @@ import streamlit as st
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from io import BytesIO
+from collections.abc import Iterable
+
 
 # Function to generate PDF based on questionnaire responses
 def generate_pdf(responses):
