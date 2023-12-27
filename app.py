@@ -32,13 +32,14 @@ def main():
     #Outline 
     st.header("General Information")
     st.subheader('1. Details of Parties:')
-    with st.form(key='my_form'):
+    with st.form(key='my_form1'):
         st.markdown('First Party Details')
         first_name=st.text_input("Full name of the 1st party:")
         first_age=st.text_input("Age of the 1st party:")
         first_address=st.text_input("Residential address of the 1st party:")
         first_aadhar=st.text_input("Aadhar Number:")
-        st.write(f'So the lease agreement is between {first_name},{first_age},{first_address}')
+        if first_aadhar!="":
+            st.write(f'So the lease agreement is between {first_name},{first_age},{first_address}')
         st.form_submit_button('Next')
     with st.form(key='my_form2'):
         st.markdown('Second Party Details')
@@ -46,7 +47,8 @@ def main():
         second_age=st.text_input("Age of the 2nd party:")
         second_address=st.text_input("Residential address of the 2nd party:")
         second_aadhar=st.text_input("Aadhar Number:")
-        st.write(f'So the lease agreement is between {first_name},{first_age},{first_address} and {second_name},{second_age},{second_address}')
+        if second_aadhar!="":
+            st.write(f'So the lease agreement is between {first_name},{first_age},{first_address} and {second_name},{second_age},{second_address}')
         st.form_submit_button('Next')
   
     # Dictionary to store responses
