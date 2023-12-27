@@ -32,16 +32,16 @@ def main():
     #Outline 
     st.header("General Information")
     st.subheader('1. Details of Parties:')
-    questions = [
-        "Full name of the 1st party:",
-        "Age of the 1st party:",
-        "Residential address of the 1st party:",
-        "Aadhar Number:"
-    ]
-
+    st.markdown('First Party Details')
+    first_name=st.text_input("Full name of the 1st party:")
+    first_age=st.text_input("Age of the 1st party:")
+    first_address=st.text_input("Residential address of the 1st party:")
+    first_aadhar=st.text_input("Aadhar Number:")
+    st.write(f'So the lease agreement is between {first_name},{first_age},{first_address}')
     # Dictionary to store responses
     responses = {}
 
-
+with st.sidebar:
+    st.radio('Select one:', [1, 2])
 if __name__ == "__main__":
     main()
