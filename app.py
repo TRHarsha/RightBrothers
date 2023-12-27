@@ -1,7 +1,4 @@
-import base64
 import streamlit as st
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
 from io import BytesIO
 
 # Function to generate PDF based on questionnaire responses
