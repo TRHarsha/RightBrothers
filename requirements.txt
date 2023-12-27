@@ -1,2 +1,2 @@
-reportlab ==3.5.67
-streamlit ==0.89.0
+reportlab
+streamlit
