@@ -3,8 +3,6 @@ import streamlit as st
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from io import BytesIO
-from collections.abc import Iterable
-
 
 # Function to generate PDF based on questionnaire responses
 def generate_pdf(responses):
@@ -47,27 +45,6 @@ def main():
     # Dictionary to store responses
     responses = {}
 
-    # Split the screen into two columns (full width)
-    tab1, tab2 = st.tabs("Tab1", "Tab2")
-
-    # Collect responses and update PDF on the fly
-    for question in questions:
-        response = tab1.text_input(question)
-        responses[question] = response
-
-        # Generate PDF on the fly
-        pdf_buffer = generate_pdf(responses)
-
-        # Display PDF in the web app
-        tab2.subheader("Generated PDF:")
-        media_type = "application/pdf"
-        media_str = base64.b64encode(pdf_buffer.read()).decode("utf-8")
-        pdf_display = f'<embed src="data:{media_type};base64,{media_str}" type="{media_type}" width="100%" height="600">'
-        tab2.write(pdf_display, unsafe_allow_html=True)
-        
-        # Download PDF
-        tab2.subheader("Download Generated PDF:")
-        tab2.download_button(label="Click to Download", data=pdf_buffer, file_name="generated_pdf.pdf", key="download_pdf")
 
 if __name__ == "__main__":
     main()
