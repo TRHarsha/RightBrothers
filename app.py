@@ -36,13 +36,9 @@ def main():
         st.subheader('1. Details of Parties:')
         st.markdown('First Party Details')
         first_name=st.text_input("Full name of the 1st party:")
-        bar = st.progress(9.090909090909091)
         first_age=st.text_input("Age of the 1st party:")
-        bar = st.progress(9.090909090909091*2)
         first_address=st.text_input("Residential address of the 1st party:")
-        bar = st.progress(9.090909090909091*3)
         first_aadhar=st.text_input("Aadhar Number:")
-        bar = st.progress(9.090909090909091*4)
         if first_aadhar!="":
             st.write(f'So the Memorandum of Understanding agreement is between {first_name},{first_age},{first_address}')
         if st.form_submit_button('Next'):
